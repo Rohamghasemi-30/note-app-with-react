@@ -1,0 +1,36 @@
+
+.container-noteapp h2{
+    text-align: center;
+}
+
+.container-noteapp form{
+    width: 30%;
+    height: 400px;
+    background-color: #4535C1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    position: relative;
+    left: 25px;
+}
+
+.container-noteapp form input{
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.container-noteapp form input:focus{
+    border: 2px #36C2CE solid;
+}
+
+
+.container-noteapp form .sub:hover{
+background-color: #478CCF;
+transition: all 0.5s;
+}
