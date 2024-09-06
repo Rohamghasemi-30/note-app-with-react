@@ -1,19 +1,23 @@
-import { useState } from 'react';
+// App.js
+import React, { useState } from 'react';
 import NoteApp from './components/NoteApp/NoteApp';
-import HeaderNote from './components/HeaderNote/HeaderNote'
-import "./App.css";
+import ContainerNote from './components/ContainerNote/ContainerNote';
+import HeaderNote from './components/HeaderNote/HeaderNote';
+import './App.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
 
-  console.log(notes);
-
   return (
-    <div className='note-app'>
-      <HeaderNote /><br /><br />
-      <div className="container">
+    <div className="container">
+      <HeaderNote />
+      <div className="App">
         <NoteApp setNotes={setNotes} />
-        <div className="note-list"></div>
+        <div className="notes-container">
+          {notes.map((note) => (
+            <ContainerNote key={note.id} note={note} />
+          ))}
+        </div>
       </div>
     </div>
   );

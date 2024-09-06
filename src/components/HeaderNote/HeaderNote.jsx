@@ -1,16 +1,16 @@
-import "./HeaderNote.css";
+// components/HeaderNote.js
+import React from 'react';
+import './HeaderNote.css';
 
 function HeaderNote() {
+  const today = new Date().toLocaleDateString();
+
   return (
-    <header>
-        <div className="builder">
-            <h3>Producer: Roham Ghasemi</h3>
-        </div>
-        <h1>note app</h1>
-        <div className="years">
-            <h3>year of manufacture: August 30, 2024.</h3>
-        </div>
-    </header>
+    <div className="header-note">
+      <img src="../public/images/logo.png" alt="Logo" className="logo" />
+        <h1>Notes</h1>
+        <span className="date">{today}</span>
+      </div>
   );
 }
 

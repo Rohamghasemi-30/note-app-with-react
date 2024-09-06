@@ -1,36 +1,55 @@
-
-.container-noteapp h2{
+.container-noteapp {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+    color: #333;
     text-align: center;
-}
-
-.container-noteapp form{
-    width: 30%;
-    height: 400px;
-    background-color: #4535C1;
+  }
+  
+  form {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-    border-radius: 8px;
-    position: relative;
-    left: 25px;
-}
-
-.container-noteapp form input{
-    width: 80%;
-    height: 40px;
-    border: none;
+  }
+  
+  input, textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #007bff;
     outline: none;
-    border-radius: 8px;
-    padding: 8px;
-}
+  }
+  
+  button {
+    background-color: #48CFCB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #229799;
+  }
+  
+  /* NoteApp.css */
 
-.container-noteapp form input:focus{
-    border: 2px #36C2CE solid;
-}
-
-
-.container-noteapp form .sub:hover{
-background-color: #478CCF;
-transition: all 0.5s;
-}
+.error {
+    border: 2px solid red;
+  }
+  

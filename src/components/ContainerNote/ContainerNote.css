@@ -1,0 +1,30 @@
+.note-card {
+  background-color: #229799;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+}
+
+.note-card h4 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.note-card p {
+  margin: 0 0 10px;
+  color: #666;
+}
+
+.note-card span {
+  display: block;
+  color: gray;
+  font-size: 0.8em;
+}
+
