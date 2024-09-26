@@ -1,12 +1,9 @@
+// components/NoteApp/NoteApp.js
 import React, { useState, useEffect } from 'react';
 import './NoteApp.css';
+import ContainerNote from '../ContainerNote/ContainerNote';
 
-function NoteApp() {
-  const [notes, setNotes] = useState(() => {
-
-    const savedNotes = localStorage.getItem('notes');
-    return savedNotes ? JSON.parse(savedNotes) : [];
-  });
+function NoteApp({ notes, setNotes }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState(false);
@@ -37,6 +34,10 @@ function NoteApp() {
     setError(false);
   };
 
+  const handleDelete = (id) => {
+    setNotes((prevNotes) => prevNotes.filter(note => note.id !== id));
+  };
+
   return (
     <div className="container-noteapp">
       <h2>Add a Note</h2>
@@ -54,15 +55,11 @@ function NoteApp() {
           value={description}
           className={error && !description ? 'error' : ''}
         />
-        <button type="submit">Add</button>
+        <button type="submit">Add</button><br /><br />
       </form>
       <div>
         {notes.map((note) => (
-          <div key={note.id}>
-            <h3>{note.title}</h3>
-            <p>{note.description}</p>
-            <p>{new Date(note.createdTime).toLocaleString()}</p> {}
-          </div>
+          <ContainerNote key={note.id} note={note} onDelete={handleDelete} />
         ))}
       </div>
     </div>
